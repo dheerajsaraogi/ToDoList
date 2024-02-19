@@ -5,6 +5,7 @@ const textArea = document.querySelector(".textarea-cont");
 const allPriorityColor = document.querySelectorAll(".priority-color");
 const removeBtn = document.querySelector(".remove-btn");
 const toolBoxColors = document.querySelectorAll(".color");
+const createTask = document.querySelector("#createTask");
 
 let ticketArr = [];
 console.log(ticketArr);
@@ -183,13 +184,13 @@ allPriorityColor.forEach((colorElem) => {
     colorElem.classList.add("active-status-color");
   });
 });
-modalCont.addEventListener("keydown", (event) => {
-  if (event.key === "Alt") {
+createTask.addEventListener("click", (event) => {
+  
     createTicket(modalPriorityColor, textArea.value, "");
     modalCont.style.display = "none";
     textArea.value = "";
     modalPriorityColor = "black";
     cleanUpColorSelction();
     addTaskFlag = false;
-  }
+
 });
